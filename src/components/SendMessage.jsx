@@ -2,7 +2,7 @@ import { auth } from '../firebaseInit';
 import { Timestamp, addDoc } from 'firebase/firestore';
 import { useState } from 'react';
 
-export default function Footer({ messagesCollection }) {
+export default function SendMessage({ messagesCollection, dummy }) {
   const [message, setMessage] = useState('');
 
   const sendMessage = async (e) => {
@@ -16,6 +16,7 @@ export default function Footer({ messagesCollection }) {
     }
     await addDoc(messagesCollection, newMessage);
     setMessage('');
+    dummy.current.scrollIntoView({ behavior: 'smooth' });
   }
 
   return (

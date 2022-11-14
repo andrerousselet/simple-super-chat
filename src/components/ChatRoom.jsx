@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { firestore } from '../firebaseInit';
 import { collection, query, orderBy, limit } from "firebase/firestore";
 import { useCollectionData } from 'react-firebase-hooks/firestore';
@@ -19,10 +19,6 @@ export default function ChatRoom() {
     messagesQuery,
     { idField: 'id' },
   );
-  
-  useEffect(() => {
-    dummy.current.scrollIntoView({ behavior: 'smooth' });
-  }, [messages])
 
   return (
     <>
@@ -37,7 +33,7 @@ export default function ChatRoom() {
           <span ref={ dummy }></span>
         </section>
       </main>
-      <SendMessage messagesCollection={ messagesCollection }/>
+      <SendMessage messagesCollection={ messagesCollection } dummy={ dummy }/>
     </>
   )
 }
