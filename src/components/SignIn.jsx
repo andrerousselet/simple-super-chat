@@ -9,6 +9,13 @@ export default function SignIn() {
   }
 
   return (
-    <button onClick={ googleSignIn }>Sign in with Google</button>
+    <div className='position-absolute top-50 start-50 translate-middle'>
+      <button 
+        className='btn btn-lg btn-outline-primary'
+        onClick={ googleSignIn }
+      >
+        Sign in with Google
+      </button>
+    </div>
   )
 }

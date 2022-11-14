@@ -8,10 +8,10 @@ function App() {
   const [user] = useAuthState(auth);
   
   return (
-    <div className="App">
+    <>
       <Header user={ user }/>
       {user ? <ChatRoom /> : <SignIn />}
-    </div>
+    </>
   );
 }
 

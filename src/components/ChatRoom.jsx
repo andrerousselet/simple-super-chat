@@ -26,10 +26,10 @@ export default function ChatRoom() {
 
   return (
     <>
-      <main className='container mt-5'>
+      <main className='container'>
         {error && <strong>Error: {JSON.stringify(error)}</strong>}
         {loading && <span>Collection: Loading...</span>}
-        <section>
+        <section style={ { marginTop: '65px', marginBottom: '65px' } }>
           {messages?.map((msg) => (
             <ChatMessage key={ msg.createdAt } message={ msg }/>
           ))}
