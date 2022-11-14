@@ -9,7 +9,7 @@ export default function SignOut() {
 
   return auth.currentUser && (
     <button 
-      className='btn btn-outline-light'
+      className='btn btn-outline-secondary'
       onClick={ signOutUser }
     >
       Sign out

@@ -21,12 +21,11 @@ export default function SendMessage({ messagesCollection, dummy }) {
 
   return (
     <form
-      className='d-flex bg-secondary justify-content-between p-2 mt-5 fixed-bottom'
+      className='d-flex bg-light justify-content-between p-2 mt-5 fixed-bottom'
       onSubmit={ sendMessage }
     >
       <input
         className='w-100 form-control me-2'
-        style={ { backgroundColor: '#adb5bd' } }
         type='text'
         placeholder='Write your message here...'
         value={ message }

@@ -16,7 +16,7 @@ export default function ChatMessage({ message }) {
       />
       <div className='border rounded-3 p-1 px-2 border-opacity-10'>
         <p
-          className='card-subtitle text-muted'
+          className='card-subtitle text-muted text-end'
           style={ { fontSize: '12px' } }
         >
           { date }
