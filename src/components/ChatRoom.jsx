@@ -2,7 +2,7 @@ import { firestore } from '../firebaseInit';
 import { collection, query, orderBy, limit } from "firebase/firestore";
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import ChatMessage from './ChatMessage';
-import Footer from './Footer';
+import SendMessage from './SendMessage';
 
 export default function ChatRoom() {
   const messagesCollection = collection(firestore, 'messages');
@@ -13,7 +13,7 @@ export default function ChatRoom() {
   );
 
   const [messages, loading, error] = useCollectionData(
-    messagesQuery, 
+    messagesQuery,
     { idField: 'id' },
     );
 
@@ -28,7 +28,7 @@ export default function ChatRoom() {
           ))}
         </section>
       </main>
-      <Footer />
+      <SendMessage messagesCollection={ messagesCollection }/>
     </>
   )
 }
